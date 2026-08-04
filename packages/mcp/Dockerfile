@@ -35,7 +35,6 @@ COPY --from=build /app/packages/mcp/dist ./dist
 RUN mkdir -p /data \
   && addgroup -S mcp && adduser -S mcp -G mcp \
   && chown -R mcp:mcp /app /data
-VOLUME /data
 
 EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
